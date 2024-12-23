@@ -1,0 +1,10 @@
+<div *ngIf="!isGameStarted; else gameView">
+    <app-game-menu (startGameEvent)="startGame()"></app-game-menu>
+  </div>
+  
+  <ng-template #gameView>
+    <app-game-board></app-game-board>
+    <!-- <app-deck></app-deck>
+    <app-player-hand></app-player-hand> -->
+  </ng-template>
+  

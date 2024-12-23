@@ -1,0 +1,30 @@
+.game-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+  
+  .game-menu h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .game-menu button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .game-menu button:hover {
+    background-color: #0056b3;
+  }
+  

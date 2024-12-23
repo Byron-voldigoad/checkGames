@@ -1,0 +1,27 @@
+<div class="game-board">
+  <!-- Fond de l'image -->
+  <div class="background">
+    <img src="/assets/images/bacground.jpg" alt="Game Background" />
+  </div>
+
+  <!-- Table au centre -->
+  <div class="table">
+    <!-- Zone du deck -->
+    <div class="deck">
+      <app-deck [deck]="deck"></app-deck>
+    </div>
+
+    <!-- Carte du milieu -->
+    <div class="middle-card">
+      <img src="/assets/images/cartes/As_Coeur.png" alt="Middle Card" />
+    </div>
+
+    <!-- Zones des joueurs -->
+    <div class="player-area player-1">
+      <app-player-hand [cards]="player1Cards"></app-player-hand>
+    </div>
+    <div class="player-area player-2">
+      <app-player-hand [cards]="player2Cards"></app-player-hand>
+    </div>
+  </div>
+</div>
