@@ -32,10 +32,11 @@
   align-items: center;
 }
 
+
 .middle-card {
   position: absolute;
-  width: 60px; /* Ajuste la taille de la carte */
-  height: 90px; /* Ajuste la taille de la carte */
+  width: 70px; /* Ajuste la taille de la carte */
+  height: 100px; /* Ajuste la taille de la carte */
   top: 50%; /* Centrer verticalement */
   left: 50%; /* Centrer horizontalement */
   transform: translate(-50%, -50%); /* Ajuste la position pour centrer exactement */
@@ -44,14 +45,32 @@
   border-radius: 5px;
 }
 .middle-card img {
-  width: 60px; /* Ajuste la taille de la carte */
-  height: 90px; /* Ajuste la taille de la carte */
+  width: 70px; /* Ajuste la taille de la carte */
+  height: 100px; /* Ajuste la taille de la carte */
+
+}
+.card-animation {
+  width: 100px; /* Ajuste la taille de la carte */
+  height: 150px; /* Ajuste la taille de la carte */
+  background-color: #fff;
+  z-index: 99;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+}
+
+
+.card-animation img {
+  width: 100px; /* Ajuste la taille de la carte */
+  height: 150px; /* Ajuste la taille de la carte */
 
 }
 
+
+
 .deck {
-  width: 60px;
-  height: 90px;
+  width: 70px;
+  height: 100px;
   /* background: url('/assets/images/cartes/Back.png') no-repeat center center; */
   background-size: cover;
   border-radius: 5px;
@@ -72,14 +91,143 @@
   align-items: center;
 }
 .player-1{
-  margin-top: 400px;
+  display: grid;
+  margin-top: 330px;
 }
+
 .player-2{
-  margin-top: -200px;
+  display: grid;
+  margin-top: -180px;
   left: 200px;
+}
+.player-3{
+  display:flex;
+  justify-content: space-around;
+  transform: translateY(-50%);
+}
+.player-area.player-3 app-player-hand {
+  transform: rotate(-90deg); /* Orientation des cartes */
 }
 
 .player-1 { top: 10%; left: 50%; transform: translate(-50%, 0); }
 .player-2 { right: 10%; top: 50%; transform: translate(0, -50%); }
-.player-3 { bottom: 10%; left: 50%; transform: translate(-50%, 0); }
+.player-3 { left: 85%; transform: translate(-50%, 0); }
 .player-4 { left: 10%; top: 50%; transform: translate(0, -50%); }
+
+.player-1 p{
+  margin-top: 2px;
+  z-index: 9999;
+  color: #fff;
+}
+.player-2 p{
+  margin-top: -380px;
+  z-index: 9999;
+  color: #ffffff;
+  transform: rotate(-180deg); /* Orientation des cartes */
+}
+.player-3 p{
+  
+  z-index: 9999;
+  color: #fff;
+  transform: rotate(-90deg); /* Orientation des cartes */
+}
+
+/* .player-area.player-3 {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-area.player-3 app-player-hand {
+  transform: rotate(-90deg); /* Orientation des cartes 
+}
+
+.player-area.player-3 img {
+  margin-bottom: 5px; 
+} */
+
+
+.msg_Turn{
+  z-index: 999;
+  color: #3d7a20;
+  font-size: 30px;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.color-options img {
+  margin: 10px;
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-options img:hover {
+  transform: scale(1.1);
+}
+
+
+.victory-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* S'assurer qu'il soit au-dessus des autres éléments */
+}
+
+.victory-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.victory-screen button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+.msgPartieEnCour{
+  position: absolute;
+  top: 20px;
+  left: -180px;
+  padding: 1%;
+  background-color: #979594;
+  border-radius: 10px;
+  max-width: 250px;
+  
+}

@@ -1,6 +1,9 @@
-<div class="player-hand">
-  <div *ngFor="let card of cards" class="card">
+<div class="player-hand" [ngClass]="{'opponent-hand': isOpponent}">
+  <div *ngFor="let card of cards; let i = index" 
+       class="card" 
+       (click)="onCardClick(card, i)"
+       [ngStyle]="getCardStyle(i, cards.length)">
     <img [src]="'/assets/images/cartes/' + card + '.png'" [alt]="card" />
   </div>
-
 </div>
+

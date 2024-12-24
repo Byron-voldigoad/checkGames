@@ -7,21 +7,88 @@
   <!-- Table au centre -->
   <div class="table">
     <!-- Zone du deck -->
-    <div class="deck">
+    <div class="deck" (click)="drawCard()">
       <app-deck [deck]="deck"></app-deck>
+    </div>
+
+    <div *ngIf="isAnimating" class="card-animation">
+      <img [src]="'/assets/images/cartes/' + cardToAnimate + '.png'" [alt]="cardToAnimate" />
+    </div>
+    
+    <div class="msg_Turn">
+      <h1 *ngIf="showTurn">Tour: {{ tour === 1 ? 'Joueur 1' :tour === 2 ? 'Joueur 2' : 'Joueur 3' }}</h1>
+    </div>
+    <div class="msgPartieEnCour">
+      <h1 [innerHTML]="myVariable"></h1>
     </div>
 
     <!-- Carte du milieu -->
     <div class="middle-card">
-      <img src="/assets/images/cartes/As_Coeur.png" alt="Middle Card" />
+      <div class="card">
+        <img [src]="'/assets/images/cartes/' + middleCard + '.png'" [alt]="middleCard" />
+      </div>
     </div>
 
     <!-- Zones des joueurs -->
+    <!-- Zone du joueur 1 -->
     <div class="player-area player-1">
-      <app-player-hand [cards]="player1Cards"></app-player-hand>
+      <app-player-hand [cards]="player1Cards" (cardClicked)="handleCardClick($event)">
+      </app-player-hand>
+      <p>Joueur 1</p>
     </div>
+
+    <!-- Zone de l'adversaire (joueur 2) -->
     <div class="player-area player-2">
-      <app-player-hand [cards]="player2Cards"></app-player-hand>
+      <app-player-hand
+        [cards]="playerCoverCards"
+        [isOpponent]="true">
+      </app-player-hand>
+      <p>Joueur 2</p>
     </div>
+
+    <!-- Zone du joueur 3 -->
+<div class="player-area player-3">
+  <app-player-hand
+    [cards]="player3CoverCards"
+    [isOpponent]="false">
+  </app-player-hand>
+  <p>Joueur 3</p>
+</div>
+
+  </div>
+
+  <!-- Modal pour changer la couleur du jeu -->
+  <div *ngIf="showColorSelector" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Choisissez une couleur</h2>
+      <div class="color-options">
+        <img
+          src="assets/images/iconesCouleurs/carreau.png"
+          alt="Carreau"
+          (click)="selectColor('Carreau')"
+        />
+        <img
+          src="assets/images/iconesCouleurs/coeur.png"
+          alt="Coeur"
+          (click)="selectColor('Coeur')"
+        />
+        <img
+          src="assets/images/iconesCouleurs/trefle.png"
+          alt="Trèfle"
+          (click)="selectColor('Trefle')"
+        />
+        <img
+          src="assets/images/iconesCouleurs/pique.png"
+          alt="Pique"
+          (click)="selectColor('Pic')"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Écran de victoire -->
+  <div *ngIf="showVictoryScreen" class="victory-screen">
+    <h1>{{ victoryMessage }}</h1>
+    <button (click)="restartGame()">Rejouer</button>
   </div>
 </div>

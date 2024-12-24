@@ -1,7 +1,7 @@
 .deck {
   position: relative;
-  width: 60px;
-  height: 90px;
+  width: 70px;
+  height: 100px;
   /* background: url("/assets/images/cartes/back.png") no-repeat center center; */
   background-size: cover;
   border-radius: 5px;
@@ -11,8 +11,8 @@
   align-items: center;
 }
 .deck img{
-  width: 60px;
-  height: 90px;
+  width: 70px;
+  height: 100px;
 }
 
 .deck-count {
