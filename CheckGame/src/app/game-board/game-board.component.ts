@@ -189,6 +189,8 @@ export class GameBoardComponent implements OnInit {
       this.passTurn(); // Passe le tour après le changement de couleur
     }
   }
+
+  
   skipTurn(): void {
     if (this.tour === 1) {
       this.tour = 3;

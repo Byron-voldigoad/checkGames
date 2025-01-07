@@ -4,19 +4,35 @@ import { DeckComponent } from './deck/deck.component';
 import { PlayerHandComponent } from './player-hand/player-hand.component';
 import { GameMenuComponent } from './game-menu/game-menu.component';
 import { CommonModule } from '@angular/common';
+import { GameRulesComponent } from './game-rules/game-rules.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule,GameBoardComponent, DeckComponent, PlayerHandComponent,GameMenuComponent],
+  imports: [
+    CommonModule,
+    GameBoardComponent,
+    DeckComponent,
+    PlayerHandComponent,
+    GameMenuComponent,
+    GameRulesComponent,
+  ],
 })
 export class AppComponent {
   title = 'CheckGame';
-  isGameStarted = false; // Par défaut, afficher le menu
+  currentView: 'menu' | 'game' | 'rules' = 'menu'; // Utiliser une seule propriété pour les états
 
   startGame() {
-    this.isGameStarted = true; // Passer à la vue du jeu
+    this.currentView = 'game'; // Passer à la vue du jeu
+  }
+
+  showRules() {
+    this.currentView = 'rules'; // Passer à la vue des règles
+  }
+
+  showMenu() {
+    this.currentView = 'menu'; // Retourner au menu principal
   }
 }

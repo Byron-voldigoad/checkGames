@@ -1,0 +1,19 @@
+.game-rules {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 10px 0;
+  }
+  
